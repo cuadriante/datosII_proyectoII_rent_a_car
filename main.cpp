@@ -9,7 +9,7 @@
 #include <arpa/inet.h>
 #include <string.h>
 #include <string>
-#include "Graph.cpp"
+#include "GrafoClase.cpp"
 using namespace std;
 using namespace sf;
 
@@ -23,15 +23,18 @@ float deltaTime;
 
 #include <vector>
 #include <cstdlib>
-
-RectangleShape background;
+CircleShape Node;
+CircleShape background;
 Texture textureBack;
 
 void Initiate();
 void Render();
+void HandleInput();
+void loadMap();
+
 
 int main() {
-    //Graph();
+    //GrafoClase(Grafo());
     window.create(VideoMode(frameWidth, frameHeight), "Rent-a-car");
     window.setPosition(Vector2i(950,-200));
     Initiate();
@@ -51,11 +54,6 @@ int main() {
 
     }
 
-void Render() {
-    window.clear(sf::Color::Black);
-    //window.draw(background);
-    window.display();
-}
 
 void Initiate() {
     //font.loadFromFile("consola.ttf");
@@ -84,84 +82,10 @@ void Initiate() {
     //scoreText.setPosition(80, frameHeight - 30);
     //scoreText.setString("score:"+ std::to_string(score));
 }
-//// stores adjacency list items
-//struct adjNode {
-//    int val, cost;
-//    adjNode* next;
-//};
-//// structure to store edges
-//struct graphEdge {
-//    int start_ver, end_ver, weight;
-//};
-//class DiaGraph{
-//    // insert new nodes into adjacency list from given graph
-//    adjNode* getAdjListNode(int value, int weight, adjNode* head)   {
-//        adjNode* newNode = new adjNode;
-//        newNode->val = value;
-//        newNode->cost = weight;
-//
-//        newNode->next = head;   // point new node to current head
-//        return newNode;
-//    }
-//    int N;  // number of nodes in the graph
-//public:
-//    adjNode **head;                //adjacency list as array of pointers
-//    // Constructor
-//    DiaGraph(graphEdge edges[], int n, int N)  {
-//        // allocate new node
-//        head = new adjNode*[N]();
-//        this->N = N;
-//        // initialize head pointer for all vertices
-//        for (int i = 0; i < N; ++i)
-//            head[i] = nullptr;
-//        // construct directed graph by adding edges to it
-//        for (unsigned i = 0; i < n; i++)  {
-//            int start_ver = edges[i].start_ver;
-//            int end_ver = edges[i].end_ver;
-//            int weight = edges[i].weight;
-//            // insert in the beginning
-//            adjNode* newNode = getAdjListNode(end_ver, weight, head[start_ver]);
-//
-//            // point head pointer to new node
-//            head[start_ver] = newNode;
-//        }
-//    }
-//    // Destructor
-//    ~DiaGraph() {
-//        for (int i = 0; i < N; i++)
-//            delete[] head[i];
-//        delete[] head;
-//    }
-//};
-//// print all adjacent vertices of given vertex
-//void display_AdjList(adjNode* ptr, int i)
-//{
-//    while (ptr != nullptr) {
-//        cout << "(" << i << ", " << ptr->val
-//             << ", " << ptr->cost << ") ";
-//        ptr = ptr->next;
-//    }
-//    cout << endl;
-//}
-//// graph implementation
-//int main()
-//{
-//    // graph edges array.
-//    graphEdge edges[] = {
-//            // (x, y, w) -> edge from x to y with weight w
-//            {0,1,2},{0,2,4},{1,4,3},{2,3,2},{3,1,4},{4,3,3}
-//    };
-//    int N = 6;      // Number of vertices in the graph
-//    // calculate number of edges
-//    int n = sizeof(edges)/sizeof(edges[0]);
-//    // construct graph
-//    DiaGraph diagraph(edges, n, N);
-//    // print adjacency list representation of graph
-//    cout<<"Graph adjacency list "<<endl<<"(start_vertex, end_vertex, weight):"<<endl;
-//    for (int i = 0; i < N; i++)
-//    {
-//        // display adjacent vertices of vertex i
-//        display_AdjList(diagraph.head[i], i);
-//    }
-//    return 0;
-//}
+void Reset(){}
+
+void Render() {
+    window.clear(sf::Color::Black);
+    //window.draw(background);
+    window.display();
+}

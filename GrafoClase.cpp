@@ -107,7 +107,7 @@ path_t *rec(path_t *path, Graph roads, int current, int start, int end, int n_ro
     return best_path;
 }
 
-int main(int argc, char **argv) {
+int Grafo(int argc, char **argv) {
     path_t *path;
     int start, end, vert;
 
