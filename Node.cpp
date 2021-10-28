@@ -5,10 +5,10 @@
 #include "Node.h"
 
 void Node::initiate() {
-
+    picture.setFillColor(sf::Color::White);
 }
 
-//void Node::setSize() {
+void Node::setSize() {
 
 }
 

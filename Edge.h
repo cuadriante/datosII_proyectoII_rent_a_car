@@ -7,6 +7,8 @@
 
 
 class Edge {
+public:
+int edge;
 
 };
 

@@ -16,7 +16,7 @@ public:
 
     void initiate();
 
-    //void setSize();
+    void setSize();
 
     void setPosition();
 

@@ -9,7 +9,7 @@
 #include <arpa/inet.h>
 #include <string.h>
 #include <string>
-#include "GrafoClase.cpp"
+
 using namespace std;
 using namespace sf;
 
@@ -24,7 +24,7 @@ float deltaTime;
 #include <vector>
 #include <cstdlib>
 CircleShape Node;
-CircleShape background;
+RectangleShape background;
 Texture textureBack;
 
 void Initiate();
