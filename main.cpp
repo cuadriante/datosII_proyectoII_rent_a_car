@@ -1,7 +1,6 @@
 #include <iostream>
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
-#include <iostream>
 #include <math.h>
 #include <unistd.h>
 #include <sys/socket.h>
@@ -9,6 +8,8 @@
 #include <arpa/inet.h>
 #include <string.h>
 #include <string>
+#include "Path.cpp"
+#include "Graph.cpp"
 
 using namespace std;
 using namespace sf;
@@ -21,6 +22,7 @@ float frameHeight = 800;
 bool Choosing1 = false;
 bool Choosing2 = false;
 bool Finished = false;
+
 
 Clock gameClock;
 float deltaTime;
@@ -38,12 +40,14 @@ void loadMap();
 
 
 int main() {
-    //GrafoClase(Grafo());
+    int NumVert;
+    cin >> NumVert;
+    Graph *grafo = new Graph(5);
     window.create(VideoMode(frameWidth, frameHeight), "Rent-a-car");
     window.setPosition(Vector2i(950,-200));
     Initiate();
     Render();
-
+    loadMap();
     while (window.isOpen()){
         deltaTime = gameClock.restart().asSeconds();
         //HandleInput();
@@ -111,4 +115,7 @@ void Render() {
     window.clear(sf::Color::Black);
     //window.draw(background);
     window.display();
+}
+void loadMap(){
+    Graph -> getVect();
 }

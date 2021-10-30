@@ -2,10 +2,10 @@
 #include <stdlib.h>
 #include <vector>
 #include <iostream>
-#include "grafo.h"
+#include "Graph.cpp"
 
 
-using namespace std;
+
 path_t *allocatePath(int n_routes) {
     path_t *path = NULL;
     path = (path_t *) malloc(sizeof(path_t) + n_routes * sizeof(path->path[0]));
@@ -105,4 +105,4 @@ int Path(int argc, char **argv) {
     printf("\n");
 
     return 0;
-}
+}};
