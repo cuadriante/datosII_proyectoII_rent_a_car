@@ -1,3 +1,6 @@
+#include <iostream>
+#include <vector>
+using namespace std;
 
 class Graph{
     public:
@@ -23,6 +26,30 @@ class Graph{
             adj[j][i] = gas;
         }
     }
+
+    void setVect(vector<vector<int>> vect){
+        for (int i = 0; i<vect.size(); i++){
+            for (int j = 0; j <vect[i].size(); j++){
+                adj[i][j] = vect[i][j];
+            }
+        }
+    }
+
+    vector<vector<int>> getVect(){
+        vector<vector<int>> vect;
+
+        for (int i = 0; i < vertex; i++){
+            vector<int> temp;
+            for (int j = 0; j < vertex; j++){
+                temp.push_back(adj[i][j]);
+            }
+
+            vect.push_back(temp);
+        }
+
+        return vect;
+    }
+
 };
 
 typedef struct path path_t;
