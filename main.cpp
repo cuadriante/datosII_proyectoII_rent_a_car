@@ -18,6 +18,10 @@ RenderWindow window;
 float frameWidth = 800;
 float frameHeight = 800;
 
+bool Choosing1 = false;
+bool Choosing2 = false;
+bool Finished = false;
+
 Clock gameClock;
 float deltaTime;
 
@@ -82,8 +86,27 @@ void Initiate() {
     //scoreText.setPosition(80, frameHeight - 30);
     //scoreText.setString("score:"+ std::to_string(score));
 }
-void Reset(){}
+void Reset(){
+    Choosing1 = false;
+    Choosing2 = false;
+    Finished = false;
+    //matriz [0][0]
+    //loadmap();
 
+}
+void Update(){
+    if (Finished){
+        Reset();
+    }
+    if (Choosing1 && Choosing2){
+        //llame a la matriz
+        //metodo de backtracking
+        //mostrar en pantalla loadmap();
+        Finished = true;
+    }
+
+
+}
 void Render() {
     window.clear(sf::Color::Black);
     //window.draw(background);
