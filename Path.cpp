@@ -3,9 +3,16 @@
 #include <vector>
 #include <iostream>
 #include "Graph.cpp"
+#pragma once
+using namespace std;
 
+typedef struct path path_t;
+struct path{
+    int max_gas;
+    int length;
+    int path[0];
 
-
+};
 path_t *allocatePath(int n_routes) {
     path_t *path = NULL;
     path = (path_t *) malloc(sizeof(path_t) + n_routes * sizeof(path->path[0]));
@@ -105,4 +112,4 @@ int Path(int argc, char **argv) {
     printf("\n");
 
     return 0;
-}};
+}

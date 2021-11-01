@@ -10,7 +10,7 @@ set(SFML_DIR "/home/rewieer/Libraries/SFML-2.5.1/lib/cmake/SFML")
 link_directories(SFML_LIBRARY_DIR)
 include_directories(SFML_INCLUDE_DIR)
 
-add_executable(datosII_proyectoII_rent_a_car main.cpp Node.cpp Node.h Edge.cpp Edge.h Graph.cpp Path.cpp Graph.h)
+add_executable(datosII_proyectoII_rent_a_car main.cpp Node.cpp Node.h Edge.cpp Edge.h Graph.cpp Path.cpp)
 
 find_package(SFML 2.5.1 COMPONENTS system window graphics network audio)
 

@@ -9,10 +9,11 @@
 
 class Node {
 public:
+
     bool enable = true;
     sf::CircleShape picture;
-    int node;
-    int edge;
+    int nodeID;
+
 
     void initiate();
 

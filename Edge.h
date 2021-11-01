@@ -4,12 +4,16 @@
 
 #ifndef DATOSII_PROYECTOII_RENT_A_CAR_EDGE_H
 #define DATOSII_PROYECTOII_RENT_A_CAR_EDGE_H
-
+#include <SFML/Graphics.hpp>
 
 class Edge {
 public:
-int edge;
+    int idEdge;
+    int weight;
 
+    void setPosition();
+    void setSize();
+    void setConexion();
 };
 
 
