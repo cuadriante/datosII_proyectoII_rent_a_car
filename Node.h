@@ -12,6 +12,7 @@ public:
 
     bool enable = true;
     sf::CircleShape picture;
+
     int nodeID;
 
 

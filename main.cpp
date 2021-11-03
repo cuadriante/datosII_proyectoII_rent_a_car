@@ -10,11 +10,12 @@
 #include <string>
 #include "Path.cpp"
 #include "Graph.cpp"
+#include "Edge.cpp"
 
 using namespace std;
 using namespace sf;
 
-RenderWindow window;
+sf::RenderWindow window;
 
 float frameWidth = 800;
 float frameHeight = 800;
@@ -24,17 +25,19 @@ bool Choosing2 = false;
 bool Finished = false;
 
 
-Clock gameClock;
+sf::Clock gameClock;
 float deltaTime;
 
 #include <vector>
 #include <cstdlib>
-CircleShape Node;
-RectangleShape background;
-Texture textureBack;
+sf::CircleShape Node;
+sf::RectangleShape background;
+sf::Texture textureBack;
 
-void Initiate();
+Edge edge;
+
 void Render();
+void Initiate();
 void HandleInput();
 void loadMap();
 
@@ -44,8 +47,8 @@ int main() {
     cin >> NumVert;
 
     //Graph *grafo = new Graph(5);
-    window.create(VideoMode(frameWidth, frameHeight), "Rent-a-car");
-    window.setPosition(Vector2i(950,-200));
+    window.create(sf::VideoMode(frameWidth, frameHeight), "Rent-a-car");
+    window.setPosition(sf::Vector2i(950,-200));
     Initiate();
     Render();
     loadMap();
@@ -72,7 +75,7 @@ void Initiate() {
     //texturePaddle.loadFromFile("paddle.png");
     //textureBrick.loadFromFile("brick.png");
 
-    background.setSize(Vector2f(frameWidth, frameHeight));
+    background.setSize(sf::Vector2f(frameWidth, frameHeight));
     background.setPosition(0, 0);
     background.setTexture(&textureBack);
 
@@ -114,11 +117,14 @@ void Update(){
 }
 void Render() {
     window.clear(sf::Color::Black);
-    //window.draw(background);
+    window.draw(background);
+  //  window.draw(edge);
     window.display();
 }
 void loadMap(){
-   Graph grafo(5);
-   grafo.print();
+   //Graph grafo(5);
 
+   //grafo.print();
+    sf::Vertex line = edge.createEdge(400,3,1);
+   window.draw(line,1,);
 }
