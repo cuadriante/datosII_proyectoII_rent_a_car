@@ -8,28 +8,33 @@
 using namespace std;
 
 class Graph{
-public:
-    int vertex;
+int vertex;
     int **adj;
 
-    explicit Graph(int vertex){
-        this -> vertex = vertex;
-        adj = new int*[vertex];
+    public:
+        Graph(int vertex){
+            this -> vertex = vertex;
+            adj = new int*[vertex];
 
-    for (int r = 0; r<vertex; r++){
-        adj[r] = new int [vertex];
-        for (int c = 0; c < vertex; c++){
-            adj[r][c] = -1;
+            for (int r = 0; r<vertex; r++){
+                adj[r] = new int [vertex];
+                for (int c = 0; c < vertex; c++){
+                    adj[r][c] = -1;
+                }
+            }
         }
+
+    void addedge(int x, int y, int gas){
     }
+    
+    void setVect(vector<vector<int>> vect){
+    }
+
+    vector<vector<int>> getVect(){
+    }
+
+    void print(){
+    }
+
 }
-    void addedge(int i, int j, int gas);
-
-    void setVect(vector<vector<int>> vect);
-
-    vector<vector<int>> getVect();
-
-    void print();
-
-
 #endif //DATOSII_PROYECTOII_RENT_A_CAR_GRAPH_H
