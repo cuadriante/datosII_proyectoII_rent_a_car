@@ -4,18 +4,21 @@
 
 #include "Node.h"
 
-void Node::initiate() {
-    picture.setFillColor(sf::Color::White);
-}
+//void Node::initiate() {
+//    picture.setFillColor(sf::Color::White);
+//}
+//
+//void Node::setSize() {
+//
+//}
+//
+//void Node::setPosition() {
+//
+//}
+//
+//void Node::setConexion() {
 
-void Node::setSize() {
 
-}
-
-void Node::setPosition() {
-
-}
-
-void Node::setConexion() {
+Node::Node() {
 
 }

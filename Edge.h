@@ -20,9 +20,9 @@ public:
     sf::Vertex createEdge(int pos1, int pos2, int idEdge);
 
 
-    void setPosition();
+    //void setPosition();
 
-    void setSize();
+    //void setSize();
 
 
     //void getIdEdge();

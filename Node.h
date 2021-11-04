@@ -6,24 +6,27 @@
 #define DATOSII_PROYECTOII_RENT_A_CAR_NODE_H
 #pragma once
 #include <SFML/Graphics.hpp>
+using namespace sf;
 
 class Node {
 public:
+    Node();
+    //bool enable = true;
 
-    bool enable = true;
+
+    //int nodeID;
+
+
+    //void initiate();
+
+    //void setSize();
+
+    //void setPosition();
+
+    //void setConexion();
+private:
     sf::CircleShape picture;
-
-    int nodeID;
-
-
-    void initiate();
-
-    void setSize();
-
-    void setPosition();
-
-    void setConexion();
-
+    String id;
 };
 
 

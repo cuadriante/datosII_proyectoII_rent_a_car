@@ -2,11 +2,13 @@
 //#include <stdlib.h>
 //#include <vector>
 //#include <iostream>
-//#include "Graph.cpp"
+//#include "Grapho.h"
+//
 //
 //using namespace std;
 //
 //typedef struct path path_t;
+//
 //struct path{
 //    int max_gas;
 //    int length;
@@ -71,15 +73,13 @@
 //
 //    free(path);
 //    return best_path;
+//
+//
+//    printf("Best path, length -> %d\n", path->max_gas);
+//    for (int i = 0; i < path->length; i++) {
+//        printf("%d ", path->path[i]);
+//    }
+//    printf("\n");
+//
+//    return 0;
 //}
-//
-//
-//
-////    printf("Best path, length -> %d\n", path->max_gas);
-////    for (int i = 0; i < path->length; i++) {
-////        printf("%d ", path->path[i]);
-////    }
-////    printf("\n");
-////
-////    return 0;
-////}
