@@ -69,7 +69,7 @@ public:
 /**
  *@brief Revisa cuando la posición de mouse esta encima del boton
  * @param window
- * @return
+ * @return un booleano con el resultado
  */
     bool isMouseOver(sf::RenderWindow &window) {
         float mouseX = sf::Mouse::getPosition(window).x;

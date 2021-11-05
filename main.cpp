@@ -207,10 +207,10 @@ int main() {
         window.draw(Line4, 2, sf::Lines);
         sf::Vertex Line5[] =
                 {
-                        sf::Vertex(sf::Vector2f(500, 50)),
-                        sf::Vertex(sf::Vector2f(100, 300))
+                        sf::Vertex(sf::Vector2f(500, 550)),
+                        sf::Vertex(sf::Vector2f(600, 450))
                 };
-        window.draw(Line, 2, sf::Lines);
+        window.draw(Line5, 2, sf::Lines);
         vertexInput.drawTo(window);
         deltaTime = gameClock.restart().asSeconds();
         //sf::CircleShape Circle(5,30);
