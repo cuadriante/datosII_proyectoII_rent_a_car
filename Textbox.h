@@ -14,7 +14,12 @@
 
 class Textbox{
 public:
-
+    /**
+     * @brief Constructor para clase Textbox
+     * @param Size
+     * @param color
+     * @param sel
+     */
     Textbox(int Size, sf::Color color, bool sel){
         textbox.setCharacterSize(Size);
         textbox.setColor(color);
@@ -22,19 +27,39 @@ public:
         textbox.setString("Digitar cantidad de ciudades (entre 1-10)");
 
     }
+    /**
+     * @brief Setea el font al textbox
+     * @param font
+     */
     void setFont(sf::Font &font){
         textbox.setFont(font);
     }
+    /**
+     * @brief setea la posicion del textbox
+     */
     void setPosition(sf::Vector2f pos){
         textbox.setPosition(pos);
     }
+    /**
+     * @brief setea un limit de caracteres
+     * @param ToF
+     */
     void setLimit(bool ToF){
         hasLimit = ToF;
     }
+    /**
+     * @brief setea un limite de caracteres
+     * @param ToF
+     * @param lim
+     */
     void setLimit(bool ToF, int lim){
         hasLimit = ToF;
         limit = lim-1;
     }
+    /**
+     * @brief setea como seleccionado el textbox
+     * @param sel
+     */
     void setSelected(bool sel){
         isSelected = sel;
         if(!sel){
@@ -49,10 +74,18 @@ public:
     std::string getText(){
         return text.str();
     }
+    /**
+     * @brief Dibuja el textBox a la ventana
+     * @param window
+     */
     void drawTo(sf::RenderWindow &window){
         //window.draw(background);
         window.draw(textbox);
     }
+    /**
+     * @brief Metodo para escribir caracteres en el textbox
+     * @param input
+     */
     void typedOn(sf::Event input){
         if(isSelected){
             int charTyped = input.text.unicode;
@@ -78,8 +111,11 @@ private:
     bool isSelected = false;
     bool hasLimit = false;
     int limit;
-    string inputCity;
-
+    //string inputCity;
+    /**
+     * @brief Hace input a la logica de caracteres
+     * @param charTyped
+     */
     void inputLogic(int charTyped){
         if (charTyped != DELETE_KEY && charTyped != ENTER_KEY && charTyped != ESCAPE_KEY){
         text << static_cast<char>(charTyped);
@@ -91,6 +127,9 @@ private:
         }
         textbox.setString(text.str() + "_");
     }
+    /**
+     * @brief metodo de delete, borra un caracter
+     */
     void deleteLastChar() {
         std::string t = text.str();
         std::string newT = "";

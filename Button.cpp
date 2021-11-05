@@ -18,7 +18,3 @@
 //
 //void Node::setConexion() {
 
-
-Node::Node() {
-
-}
