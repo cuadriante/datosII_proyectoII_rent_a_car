@@ -11,7 +11,7 @@
 #include "Path.cpp"
 #include "Graph.cpp"
 #include "Edge.cpp"
-#include "Node.h"
+#include "Button.h"
 #include "Edge.h"
 #include "Textbox.h"
 
@@ -22,7 +22,7 @@ RenderWindow window;
 
 Font font;
 Text titleText;
-Textbox vertexInput(25, sf::Color::White, true);
+Textbox vertexInput(25, sf::Color::White, false);
 
 typedef struct path path_t;
 
@@ -57,7 +57,7 @@ Texture textureBack;
 
 Vertex Line;
 
-vector<Node*> nodes;
+vector<Button*> nodes;
 vector<Edge*> edges;
 
 
@@ -89,6 +89,13 @@ int main() {
     while (window.isOpen()) {
         sf::Event Event;
 
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Return)){
+            vertexInput.setSelected(true);
+        }
+        else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
+            vertexInput.setSelected(false);
+
+        }
         while (window.pollEvent(Event)) {
             switch (Event.type) {
                 case sf::Event::Closed:

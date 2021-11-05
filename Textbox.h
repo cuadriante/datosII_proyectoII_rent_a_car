@@ -18,7 +18,7 @@ public:
     Textbox(int Size, sf::Color color, bool sel){
         textbox.setCharacterSize(Size);
         textbox.setColor(color);
-        isSelected=true;
+        isSelected=false;
         textbox.setString("Digitar cantidad de ciudades (entre 1-10)");
 
     }
@@ -33,14 +33,14 @@ public:
     }
     void setLimit(bool ToF, int lim){
         hasLimit = ToF;
-        limit = lim;
+        limit = lim-1;
     }
     void setSelected(bool sel){
         isSelected = sel;
         if(!sel){
             std::string t = text.str();
             std::string newT = "";
-            for(int i = 0; i < t.length() -1; i++){
+            for(int i = 0; i < t.length(); i++){
                 newT += t[i];
         }
             textbox.setString(newT);

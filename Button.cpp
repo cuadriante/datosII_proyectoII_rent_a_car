@@ -2,7 +2,7 @@
 // Created by axel on 10/26/21.
 //
 
-#include "Node.h"
+#include "Button.h"
 
 //void Node::initiate() {
 //    picture.setFillColor(sf::Color::White);
